@@ -1,124 +1,75 @@
-/* Estilo geral do corpo da página */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilo do cabeçalho */
 .header-bg {
-  background-color: #0056b3; /* tom mais escuro, porém agradável aos olhos */
-  color: #fff;
+    background-color: #0056b3; /* tom mais escuro, porém agradável aos olhos */
+    color: #fff;
 }
 
 .mdl-layout__header-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mdl-layout-title {
-  font-size: 24px; /* Tamanho maior do título */
-  font-weight: bold;
-  text-transform: uppercase;
+    font-size: 28px; /* Aumentando o tamanho do título */
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Estilo do conteúdo principal */
 .mdl-layout__content {
-  padding: 20px;
-  text-align: center; /* Centralizar o conteúdo */
-  padding-bottom: 80px; /* Espaço para o menu fixo */
+    padding: 20px;
+    text-align: center; /* Centralizando o conteúdo */
 }
 
-/* Estilo da descrição do site */
 .site-description {
-  font-size: 16px;
-  margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-/* Estilo do input de seleção de deputado */
-.mdl-selectfield {
-  width: 100%;
+.mdl-textfield__label {
+    color: #666;
 }
 
-.mdl-selectfield__select {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+.mdl-textfield__input {
+    text-align: center; /* Centralizando o dropdown */
 }
 
-.mdl-selectfield__label {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Estilo do botão de consulta */
 .mdl-button {
-  margin-top: 20px;
-  background-color: #007bff;
-  color: #fff;
-  display: block; /* Ocupar toda a largura disponível */
-  width: 100%;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
 }
 
-/* Estilo da lista de proposições */
-.propositions-list {
-  list-style: none;
-  padding: 0;
-}
-
-.propositions-list li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-}
-
-/* Estilo do menu inferior */
 .menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background-color: #f0f0f0;
-  padding: 10px 0;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 2; /* Garantir que o menu esteja acima do conteúdo */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item {
-  color: #007bff;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu-item.active {
-  font-weight: bold; /* Destacar o item ativo */
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu-item span {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .material-icons {
-  font-size: 24px;
-}
-
-/* Estilo para o nome do deputado selecionado */
-#selectDeputados.selected + .mdl-selectfield__label {
-  display: none; /* Esconder o label quando um deputado é selecionado */
-}
-
-#selectDeputados.selected option:selected {
-  font-weight: bold; /* Nome do deputado em negrito */
+    font-size: 24px;
 }
