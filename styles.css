@@ -1,44 +1,24 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0;
+/* Adicione estilos conforme necessário para o menu na parte inferior */
+.mdl-mini-footer {
+    background-color: #333;
+    color: white;
+    padding: 16px;
+}
+
+.mdl-mini-footer__link-list {
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.mdl-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.mdl-mini-footer__link-list li {
+    display: inline;
+    margin-right: 10px;
 }
 
-.mdl-layout__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.mdl-textfield {
+/* Estilos para as informações do deputado */
+.deputado-info {
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
-    width: 100%;
-}
-
-#btnConsultar {
-    margin-top: 20px;
-}
-
-#listaProposicoes {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#listaProposicoes li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
