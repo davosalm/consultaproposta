@@ -5,6 +5,7 @@ $(document).ready(function(){
     // Função para carregar os deputados
     function carregarDeputados() {
         $.get(baseUrl + "deputados", function(data){
+            console.log("Dados deputados:", data); // Adicionando log dos dados recebidos
             var deputados = data.dados;
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
@@ -12,6 +13,9 @@ $(document).ready(function(){
                 selectDeputados.append("<option value='" + deputado.id + "'>" + deputado.nome + "</option>");
             });
             selectDeputados.prop("disabled", false);
+        })
+        .fail(function() {
+            console.log("Erro ao carregar os deputados."); // Adicionando log de erro
         });
     }
 
