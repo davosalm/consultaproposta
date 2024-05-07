@@ -5,23 +5,30 @@ $(document).ready(function(){
     // Função para carregar os deputados
     function carregarDeputados() {
         $.get(baseUrl + "deputados", function(data){
-            console.log("Dados deputados:", data); // Adicionando log dos dados recebidos
             var deputados = data.dados;
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
             $.each(deputados, function(index, deputado){
-                selectDeputados.append("<option value='" + deputado.id + "'>" + deputado.nome + "</option>");
+                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "'>" + deputado.nome + "</option>");
             });
             selectDeputados.prop("disabled", false);
         })
         .fail(function() {
-            console.log("Erro ao carregar os deputados."); // Adicionando log de erro
+            console.log("Erro ao carregar os deputados.");
         });
     }
 
     // Função para carregar as proposições do deputado selecionado
     function carregarProposicoes() {
         var deputadoId = $("#selectDeputados").val();
+        var deputadoNome = $("#selectDeputados option:selected").text(); // Nome do deputado selecionado
+        var partido = $("#selectDeputados option:selected").attr("data-partido"); // Partido do deputado selecionado
+
+        $("#deputadoInfo").html("<p>" + deputadoNome + " - " + partido + "</p>"); // Exibir informações do deputado
+
+        // Ocultar dropdown de deputados
+        $("#selectDeputados").hide();
+
         $.get(baseUrl + "proposicoes", {idDeputadoAutor: deputadoId}, function(data){
             var proposicoes = data.dados;
             var listaProposicoes = $("#listaProposicoes");
