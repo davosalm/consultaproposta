@@ -16,14 +16,23 @@
         <main class="mdl-layout__content">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <select class="mdl-textfield__input" id="selectDeputados">
-                    <option value="" disabled selected>Selecione um deputado</option>
+                    <option value="" disabled selected>Clique e escolha</option>
                     <!-- Os deputados serão preenchidos após a requisição à API -->
                 </select>
                 <label class="mdl-textfield__label" for="selectDeputados">Deputado</label>
             </div>
+            <div id="deputadoInfo" class="deputado-info"></div> <!-- Div para exibir informações do deputado -->
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btnConsultar">Consultar</button>
             <ul id="listaProposicoes"></ul>
         </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
