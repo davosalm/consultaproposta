@@ -5,61 +5,40 @@ body {
     padding: 0;
 }
 
-.mdl-layout__header-row {
+.mdl-layout {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mdl-layout-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .mdl-layout__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-.site-description {
-    font-size: 16px;
+.mdl-textfield {
     margin-bottom: 20px;
-}
-
-.mdl-textfield__label {
-    color: #666;
-}
-
-.mdl-button {
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
-}
-
-.menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: #f0f0f0;
-    padding: 10px 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.menu-item {
-    color: #007bff;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#btnConsultar {
+    margin-top: 20px;
 }
 
-.menu-item span {
-    font-size: 12px;
+#listaProposicoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.material-icons {
-    font-size: 24px;
+#listaProposicoes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
