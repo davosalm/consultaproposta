@@ -5,6 +5,18 @@ body {
     padding: 0;
 }
 
+.mdl-layout__header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mdl-layout-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -17,94 +29,29 @@ body {
     margin-bottom: 20px;
 }
 
-.mdl-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.mdl-layout__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.site-description {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.input-container {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.mdl-textfield {
-    width: 100%;
-}
-
-.mdl-textfield__label {
-    margin-bottom: 8px;
-}
-
-#btnConsultar {
-    margin-top: 20px;
-}
-
-#listaProposicoes {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 80px; /* Adiciona espaço para o menu inferior */
-}
-
-#listaProposicoes li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 64px;
-    z-index: 999; /* Adiciona um índice Z alto para sobrepor o conteúdo */
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px 0;
 }
 
 .menu-item {
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex: 1;
-    height: 100%;
-    transition: background-color 0.3s;
 }
 
-.menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.menu-item span {
+    font-size: 12px;
 }
 
-.menu-item i {
+.material-icons {
     font-size: 24px;
-    margin-bottom: 4px;
 }
