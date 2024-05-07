@@ -17,13 +17,14 @@ body {
 }
 
 .mdl-layout-title {
-    font-size: 24px;
+    font-size: 28px; /* Aumentando o tamanho do título */
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .mdl-layout__content {
     padding: 20px;
+    text-align: center; /* Centralizando o conteúdo */
 }
 
 .site-description {
@@ -33,6 +34,10 @@ body {
 
 .mdl-textfield__label {
     color: #666;
+}
+
+.mdl-textfield__input {
+    text-align: center; /* Centralizando o dropdown */
 }
 
 .mdl-button {
