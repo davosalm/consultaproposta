@@ -2,22 +2,9 @@ $(document).ready(function(){
     // URL base da API
     var baseUrl = "https://dadosabertos.camara.leg.br/api/v2/";
 
-    // Função para carregar os partidos
-    function carregarPartidos() {
-        $.get(baseUrl + "partidos", function(data){
-            var partidos = data.dados;
-            var selectPartidos = $("#selectPartidos");
-            selectPartidos.empty();
-            $.each(partidos, function(index, partido){
-                selectPartidos.append("<option value='" + partido.sigla + "'>" + partido.nome + " (" + partido.sigla + ")</option>");
-            });
-        });
-    }
-
-    // Função para carregar os deputados do partido selecionado
+    // Função para carregar os deputados
     function carregarDeputados() {
-        var partidoSigla = $("#selectPartidos").val();
-        $.get(baseUrl + "deputados", {siglaPartido: partidoSigla}, function(data){
+        $.get(baseUrl + "deputados", function(data){
             var deputados = data.dados;
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
@@ -41,16 +28,11 @@ $(document).ready(function(){
         });
     }
 
-    // Carregar os partidos ao carregar a página
-    carregarPartidos();
+    // Carregar os deputados ao carregar a página
+    carregarDeputados();
 
     // Botão de consulta
     $("#btnConsultar").click(function(){
         carregarProposicoes();
-    });
-
-    // Carregar os deputados ao selecionar um partido
-    $("#selectPartidos").change(function(){
-        carregarDeputados();
     });
 });
