@@ -17,16 +17,23 @@ body {
     text-transform: uppercase;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.mdl-layout__content {
     padding: 20px;
 }
 
-.title {
-    color: #333;
-    font-size: 36px;
+.site-description {
+    font-size: 16px;
     margin-bottom: 20px;
+}
+
+.mdl-textfield__label {
+    color: #666;
+}
+
+.mdl-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
 }
 
 .menu {
@@ -36,12 +43,13 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #f0f0f0;
     padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item {
-    color: #fff;
+    color: #007bff;
     text-decoration: none;
     display: flex;
     flex-direction: column;
