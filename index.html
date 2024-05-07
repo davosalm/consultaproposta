@@ -7,31 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Consulta de Deputados e Proposições</span>
-            </div>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Consulta de Deputados e Proposições</h1>
         </header>
-        <main class="mdl-layout__content">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <select class="mdl-textfield__input" id="selectDeputados">
+        <main class="main">
+            <div class="select-container">
+                <select class="select-deputados" id="selectDeputados">
                     <option value="" disabled selected>Clique e escolha</option>
                     <!-- Os deputados serão preenchidos após a requisição à API -->
                 </select>
-                <label class="mdl-textfield__label" for="selectDeputados">Deputado</label>
+                <label class="select-label" for="selectDeputados">Deputado</label>
             </div>
-            <div id="deputadoInfo" class="deputado-info"></div> <!-- Div para exibir informações do deputado -->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btnConsultar">Consultar</button>
-            <ul id="listaProposicoes"></ul>
+            <div id="deputadoInfo" class="deputado-info"></div>
+            <button class="btn-consultar" id="btnConsultar">Consultar</button>
+            <ul id="listaProposicoes" class="lista-proposicoes"></ul>
         </main>
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                </ul>
-            </div>
+        <footer class="footer">
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Sobre</a>
+            </nav>
         </footer>
     </div>
 
