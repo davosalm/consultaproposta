@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Proposições</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <title>Consulta de Proposta</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Consulta de Proposições</span>
+                <span class="mdl-layout-title">📋 CONSULTA PROPOSTA</span>
             </div>
             <div id="deputadoInfo" class="deputado-info">
                 <!-- Aqui será preenchido o nome e o partido do deputado selecionado -->
@@ -24,9 +21,9 @@
             <p class="site-description">Este site permite consultar as proposições de um deputado específico.</p>
             <div class="input-container">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <label class="mdl-textfield__label" for="selectDeputados">Selecione um deputado</label>
+                    <label class="mdl-textfield__label" for="selectDeputados">Escolha o deputado</label>
                     <select class="mdl-textfield__input" id="selectDeputados" disabled>
-                        <option value="" disabled selected>Selecione um deputado</option>
+                        <option value="" disabled selected>Escolha o deputado</option>
                         <!-- Os deputados serão preenchidos após a requisição à API -->
                     </select>
                 </div>
