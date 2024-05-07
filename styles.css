@@ -1,0 +1,80 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.mdl-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mdl-layout__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mdl-textfield {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#btnConsultar {
+    margin-top: 20px;
+}
+
+#listaProposicoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 80px; /* Adiciona espaço para o menu inferior */
+}
+
+#listaProposicoes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    z-index: 999; /* Adiciona um índice Z alto para sobrepor o conteúdo */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item i {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
