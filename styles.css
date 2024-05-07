@@ -5,6 +5,18 @@ body {
     padding: 0;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
 .mdl-layout {
     display: flex;
     flex-direction: column;
