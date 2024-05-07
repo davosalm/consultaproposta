@@ -20,9 +20,27 @@ body {
     padding: 20px;
 }
 
-.mdl-textfield {
+.logo {
+    width: 150px;
     margin-bottom: 20px;
+}
+
+.site-description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
     width: 100%;
+    margin-bottom: 20px;
+}
+
+.mdl-textfield {
+    width: 100%;
+}
+
+.mdl-textfield__label {
+    margin-bottom: 8px;
 }
 
 #btnConsultar {
