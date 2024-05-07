@@ -5,12 +5,15 @@ body {
     padding: 0;
 }
 
+.header-bg {
+    background-color: #0056b3; /* tom mais escuro, porém agradável aos olhos */
+    color: #fff;
+}
+
 .mdl-layout__header-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
-    color: #fff;
 }
 
 .mdl-layout-title {
