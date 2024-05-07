@@ -18,17 +18,16 @@
         </div>
     </header>
     <main class="mdl-layout__content">
-      <p class="site-description">Este site permite consultar as proposições de um deputado específico.</p>
       <div class="input-container">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <label class="mdl-textfield__label" for="selectDeputados">Escolha o deputado</label>
           <select class="mdl-textfield__input" id="selectDeputados" disabled>
             <option value="" disabled selected>Escolha o deputado</option>
-            </select>
+          </select>
         </div>
       </div>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="btnConsultar">Consultar</button>
-      <ul id="listaProposicoes"></ul>
+      <ul id="listaProposicoes" class="propositions-list"></ul>
     </main>
   </div>
 
