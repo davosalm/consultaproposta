@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Deputados e Proposições</title>
+    <title>Consulta de Proposições</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -12,23 +13,23 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Consulta de Deputados e Proposições</span>
+                <span class="mdl-layout-title">Consulta de Proposições</span>
+            </div>
+            <div id="deputadoInfo" class="deputado-info">
+                <!-- Aqui será preenchido o nome e o partido do deputado selecionado -->
             </div>
         </header>
         <main class="mdl-layout__content">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <select class="mdl-textfield__input" id="selectPartidos">
-                    <option value="" disabled selected>Selecione um partido</option>
-                    <!-- Os partidos serão preenchidos após a requisição à API -->
-                </select>
-                <label class="mdl-textfield__label" for="selectPartidos">Partido</label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <select class="mdl-textfield__input" id="selectDeputados" disabled>
-                    <option value="" disabled selected>Selecione um deputado</option>
-                    <!-- Os deputados serão preenchidos após a seleção do partido -->
-                </select>
-                <label class="mdl-textfield__label" for="selectDeputados">Deputado</label>
+            <img src="placeholder_image.jpg" alt="Logo" class="logo">
+            <p class="site-description">Este site permite consultar as proposições de um deputado específico.</p>
+            <div class="input-container">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__label" for="selectDeputados">Selecione um deputado</label>
+                    <select class="mdl-textfield__input" id="selectDeputados" disabled>
+                        <option value="" disabled selected>Selecione um deputado</option>
+                        <!-- Os deputados serão preenchidos após a requisição à API -->
+                    </select>
+                </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="btnConsultar">Consultar</button>
             <ul id="listaProposicoes"></ul>
