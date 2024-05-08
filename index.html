@@ -21,16 +21,22 @@
                 </select>
                 <label class="select-label" for="selectDeputados">Deputado</label>
             </div>
-            <div id="deputadoInfo" class="deputado-info"></div>
+            <div class="deputado-info-container" id="deputadoInfoContainer">
+                <div class="deputado-info">
+                    <img src="" alt="Foto do Deputado" id="deputadoFoto" class="deputado-foto">
+                    <div class="deputado-details" id="deputadoDetails">
+                        <h2 class="deputado-name"></h2>
+                        <p class="deputado-party"></p>
+                        <p class="deputado-state"></p>
+                    </div>
+                </div>
+            </div>
             <button class="btn-consultar" id="btnConsultar">Consultar</button>
             <ul id="listaProposicoes" class="lista-proposicoes"></ul>
         </main>
     </div>
     <footer class="footer">
-        <nav class="nav-menu">
-            <a href="#" class="nav-link">Início</a>
-            <a href="#" class="nav-link">Sobre</a>
-        </nav>
+        <a href="#" class="nav-link">Início</a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
