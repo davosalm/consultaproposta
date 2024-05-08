@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    // URL base da API
     var baseUrl = "https://dadosabertos.camara.leg.br/api/v2/";
 
     // Função para carregar os deputados
@@ -18,7 +18,7 @@ $(document).ready(function(){
                     // Adiciona um evento onload para garantir que a imagem foi carregada corretamente
                     img.onload = function() {
                         // Adiciona o deputado ao dropdown após a imagem ser carregada
-                        selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "' data-foto='" + deputado.urlFoto + "'>" + deputado.nome + "</option>");
+                        selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "' data-foto='" + img.src + "'>" + deputado.nome + "</option>");
                     };
                     // Adiciona um evento onerror para lidar com erros de carregamento da imagem
                     img.onerror = function() {
