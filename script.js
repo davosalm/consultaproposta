@@ -1,24 +1,24 @@
 $(document).ready(function(){
-    // URL puxada da API
+    // URL base da API
     var baseUrl = "https://dadosabertos.camara.leg.br/api/v2/";
 
-    // Função que serve pra carregar os deputados/as
+    // Função para carregar os deputados
     function carregarDeputados() {
         $.get(baseUrl + "deputados", function(data){
             var deputados = data.dados;
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
             $.each(deputados, function(index, deputado){
-                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "'>" + deputado.nome + "</option>");
+                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "' data-foto='" + deputado.urlFoto + "'>" + deputado.nome + "</option>");
             });
             selectDeputados.prop("disabled", false);
         })
         .fail(function() {
-            console.log("Erro ao carregar os deputados. Pode ser algum problema no banco da Câmara dos Deputados. Aguarde alguns segundos e tente novamente.");
+            console.log("Erro ao carregar os deputados.");
         });
     }
 
-    // Carregar informações do deputado/a selecionado
+    // Função para carregar informações do deputado selecionado
     function carregarInfoDeputado() {
         var deputadoSelecionado = $("#selectDeputados option:selected");
         var nomeDeputado = deputadoSelecionado.attr("data-nome");
@@ -29,10 +29,12 @@ $(document).ready(function(){
         $(".deputado-party").text("Partido: " + partidoDeputado);
         $(".deputado-state").text("UF: " + ufDeputado);
 
-        $("#deputadoInfoContainer").show();
+        var fotoDeputado = deputadoSelecionado.attr("data-foto");
+        $(".deputado-foto").attr("src", fotoDeputado); // Atualiza a imagem do deputado
+        $(".deputado-info-container").show(); // Exibe as informações do deputado
     }
 
-    // Isso daqui serve pra carregar as proposições do deputado selecionado, puxado através da API
+    // Função para carregar as proposições do deputado selecionado
     function carregarProposicoes() {
         var deputadoId = $("#selectDeputados").val();
 
@@ -53,8 +55,6 @@ $(document).ready(function(){
     $("#btnConsultar").click(function(){
         carregarInfoDeputado();
         carregarProposicoes();
-        $(".header-text").hide();
-        var fotoDeputado = $("#selectDeputados option:selected").attr("data-foto");
-        $(".deputado-foto").attr("src", fotoDeputado);
+        $(".header-text").hide(); // Esconde o texto do cabeçalho
     });
 });
