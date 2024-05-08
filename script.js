@@ -9,7 +9,7 @@ $(document).ready(function(){
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
             $.each(deputados, function(index, deputado){
-                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-foto='" + deputado.urlFoto + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "'>" + deputado.nome + "</option>");
+                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "'>" + deputado.nome + "</option>");
             });
             selectDeputados.prop("disabled", false);
         })
@@ -21,12 +21,10 @@ $(document).ready(function(){
     // Função para carregar informações do deputado selecionado
     function carregarInfoDeputado() {
         var deputadoSelecionado = $("#selectDeputados option:selected");
-        var fotoDeputado = deputadoSelecionado.attr("data-foto");
         var nomeDeputado = deputadoSelecionado.attr("data-nome");
         var partidoDeputado = deputadoSelecionado.attr("data-partido");
         var ufDeputado = deputadoSelecionado.attr("data-uf");
 
-        $("#deputadoFoto").attr("src", fotoDeputado);
         $(".deputado-name").text(nomeDeputado);
         $(".deputado-party").text("Partido: " + partidoDeputado);
         $(".deputado-state").text("UF: " + ufDeputado);
@@ -51,19 +49,12 @@ $(document).ready(function(){
     // Carregar os deputados ao carregar a página
     carregarDeputados();
 
-    // Ao selecionar um deputado, carregar suas informações
-    $("#selectDeputados").change(function(){
-        carregarInfoDeputado();
-    });
-
-    // Botão de consulta
+    // Ao clicar em consultar, carregar informações do deputado e proposições
     $("#btnConsultar").click(function(){
+        carregarInfoDeputado();
         carregarProposicoes();
-    });
-
-    // Redirecionar para a página inicial quando clicar no título
-    $(".title-link").click(function(event){
-        event.preventDefault();
-        carregarDeputados();
+        $(".header-text").hide();
+        var fotoDeputado = $("#selectDeputados option:selected").attr("data-foto");
+        $(".deputado-foto").attr("src", fotoDeputado);
     });
 });
