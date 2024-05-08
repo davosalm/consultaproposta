@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
-    transition: background-color 0.3s; /* Adicionando transição de cor de fundo */
+    transition: background-color 0.3s; 
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s; /* Adicionando transição de sombra */
+    transition: box-shadow 0.3s; /* sombra de transição */
 }
 
 .header {
@@ -26,14 +26,14 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
-    transition: color 0.3s; /* Adicionando transição de cor de texto */
+    transition: color 0.3s; /* muda a cor */
 }
 
 .header-text {
     font-size: 14px;
     color: #666;
     margin-top: 0;
-    transition: opacity 0.3s; /* Adicionando transição de opacidade */
+    transition: opacity 0.3s; /* mexe na opacidade */
 }
 
 .main {
@@ -51,7 +51,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    transition: border-color 0.3s; /* Adicionando transição de cor da borda */
+    transition: border-color 0.3s; /* transição de cor da borda */
 }
 
 .select-label {
@@ -70,12 +70,12 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Adicionando transições de cor de fundo e transformação */
+    transition: background-color 0.3s, transform 0.2s; /* transições de cor de fundo e transformação */
 }
 
 .btn-consultar:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Efeito de aumento de escala ao passar o mouse */
+    transform: scale(1.05); /* aumento ao passar o mouse */
 }
 
 .lista-proposicoes {
@@ -83,7 +83,7 @@ body {
     padding: 0;
     margin: 20px 0;
     text-align: left;
-    transition: margin 0.3s; /* Adicionando transição de margem */
+    transition: margin 0.3s; /* transição de margem */
 }
 
 .lista-proposicoes li {
