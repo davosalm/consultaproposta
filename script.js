@@ -9,7 +9,25 @@ $(document).ready(function(){
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
             $.each(deputados, function(index, deputado){
-                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "' data-foto='" + deputado.urlFoto + "'>" + deputado.nome + "</option>");
+                // Verifica se a URL da imagem está disponível
+                if (deputado.urlFoto) {
+                    // Cria um novo objeto Image
+                    var img = new Image();
+                    // Define o atributo src com a URL da imagem
+                    img.src = deputado.urlFoto;
+                    // Adiciona um evento onload para garantir que a imagem foi carregada corretamente
+                    img.onload = function() {
+                        // Adiciona o deputado ao dropdown após a imagem ser carregada
+                        selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "' data-foto='" + deputado.urlFoto + "'>" + deputado.nome + "</option>");
+                    };
+                    // Adiciona um evento onerror para lidar com erros de carregamento da imagem
+                    img.onerror = function() {
+                        console.error("Erro ao carregar imagem para o deputado: " + deputado.nome);
+                    };
+                } else {
+                    // Se a URL da imagem não estiver disponível, adicione apenas o nome do deputado ao dropdown
+                    selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "'>" + deputado.nome + "</option>");
+                }
             });
             selectDeputados.prop("disabled", false);
         })
