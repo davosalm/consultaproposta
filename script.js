@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // URL base da API
+    
     var baseUrl = "https://dadosabertos.camara.leg.br/api/v2/";
 
     // Função para carregar os deputados
