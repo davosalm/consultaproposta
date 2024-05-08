@@ -9,7 +9,7 @@ $(document).ready(function(){
             var selectDeputados = $("#selectDeputados");
             selectDeputados.empty();
             $.each(deputados, function(index, deputado){
-                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "'>" + deputado.nome + "</option>");
+                selectDeputados.append("<option value='" + deputado.id + "' data-partido='" + deputado.siglaPartido + "' data-foto='" + deputado.urlFoto + "' data-nome='" + deputado.nome + "' data-uf='" + deputado.siglaUf + "'>" + deputado.nome + "</option>");
             });
             selectDeputados.prop("disabled", false);
         })
@@ -18,16 +18,25 @@ $(document).ready(function(){
         });
     }
 
+    // Função para carregar informações do deputado selecionado
+    function carregarInfoDeputado() {
+        var deputadoSelecionado = $("#selectDeputados option:selected");
+        var fotoDeputado = deputadoSelecionado.attr("data-foto");
+        var nomeDeputado = deputadoSelecionado.attr("data-nome");
+        var partidoDeputado = deputadoSelecionado.attr("data-partido");
+        var ufDeputado = deputadoSelecionado.attr("data-uf");
+
+        $("#deputadoFoto").attr("src", fotoDeputado);
+        $(".deputado-name").text(nomeDeputado);
+        $(".deputado-party").text("Partido: " + partidoDeputado);
+        $(".deputado-state").text("UF: " + ufDeputado);
+
+        $("#deputadoInfoContainer").show();
+    }
+
     // Função para carregar as proposições do deputado selecionado
     function carregarProposicoes() {
         var deputadoId = $("#selectDeputados").val();
-        var deputadoNome = $("#selectDeputados option:selected").text(); // Nome do deputado selecionado
-        var partido = $("#selectDeputados option:selected").attr("data-partido"); // Partido do deputado selecionado
-
-        $("#deputadoInfo").html("<p>" + deputadoNome + " - " + partido + "</p>"); // Exibir informações do deputado
-
-        // Ocultar dropdown de deputados
-        $("#selectDeputados").hide();
 
         $.get(baseUrl + "proposicoes", {idDeputadoAutor: deputadoId}, function(data){
             var proposicoes = data.dados;
@@ -41,6 +50,11 @@ $(document).ready(function(){
 
     // Carregar os deputados ao carregar a página
     carregarDeputados();
+
+    // Ao selecionar um deputado, carregar suas informações
+    $("#selectDeputados").change(function(){
+        carregarInfoDeputado();
+    });
 
     // Botão de consulta
     $("#btnConsultar").click(function(){
