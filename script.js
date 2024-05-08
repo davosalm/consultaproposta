@@ -46,4 +46,10 @@ $(document).ready(function(){
     $("#btnConsultar").click(function(){
         carregarProposicoes();
     });
+
+    // Redirecionar para a página inicial quando clicar no título
+    $(".title-link").click(function(event){
+        event.preventDefault();
+        carregarDeputados();
+    });
 });
