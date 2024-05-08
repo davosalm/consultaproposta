@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    // URL base da API
+    // URL puxada da API
     var baseUrl = "https://dadosabertos.camara.leg.br/api/v2/";
 
-    // Função para carregar os deputados
+    // Função que serve pra carregar os deputados/as
     function carregarDeputados() {
         $.get(baseUrl + "deputados", function(data){
             var deputados = data.dados;
@@ -14,11 +14,11 @@ $(document).ready(function(){
             selectDeputados.prop("disabled", false);
         })
         .fail(function() {
-            console.log("Erro ao carregar os deputados.");
+            console.log("Erro ao carregar os deputados. Pode ser algum problema no banco da Câmara dos Deputados. Aguarde alguns segundos e tente novamente.");
         });
     }
 
-    // Função para carregar informações do deputado selecionado
+    // Carregar informações do deputado/a selecionado
     function carregarInfoDeputado() {
         var deputadoSelecionado = $("#selectDeputados option:selected");
         var nomeDeputado = deputadoSelecionado.attr("data-nome");
@@ -32,7 +32,7 @@ $(document).ready(function(){
         $("#deputadoInfoContainer").show();
     }
 
-    // Função para carregar as proposições do deputado selecionado
+    // Isso daqui serve pra carregar as proposições do deputado selecionado, puxado através da API
     function carregarProposicoes() {
         var deputadoId = $("#selectDeputados").val();
 
